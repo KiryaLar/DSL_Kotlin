@@ -85,7 +85,6 @@ class MyPipelineBuilder : PipelineBuilder {
     fun <T> build(): Pipeline<T> = MyPipeline(dataSource, steps)
 }
 
-
 fun <T> pipeline(init: PipelineBuilder.() -> Unit): Pipeline<T> {
     val pipelineBuilder = MyPipelineBuilder().apply(init)
     return pipelineBuilder.build()
